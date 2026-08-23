@@ -1,8 +1,8 @@
-# 🛒 Price Monitor API
+# Price Monitor API
 
 Uma API robusta para monitoramento de preços de produtos com scraping automático, sistema de alertas e cache inteligente.
 
-## 🎯 Características Principais
+## Características Principais
 
 - **API RESTful** completa com FastAPI
 - **Autenticação JWT** segura
@@ -10,11 +10,10 @@ Uma API robusta para monitoramento de preços de produtos com scraping automáti
 - **Sistema de alertas** de preço
 - **Cache Redis** para otimização
 - **Filas Celery** para processamento assíncrono
-- **Testes automatizados** com >80% cobertura
 - **Docker Compose** para deploy fácil
 - **Documentação interativa** (Swagger/OpenAPI)
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ```
 price-monitor/
@@ -37,14 +36,13 @@ price-monitor/
 │   │   └── monitor.py    # Serviço de monitoramento
 │   └── workers/          # Tarefas assíncronas
 │       └── celery_worker.py
-├── tests/                # Testes automatizados
 ├── docker-compose.yml    # Orquestração
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Opção 1: Docker (Recomendado)
 
@@ -94,7 +92,7 @@ celery -A app.workers.celery_worker worker --loglevel=info
 celery -A app.workers.celery_worker beat --loglevel=info
 ```
 
-## 📚 Uso da API
+## Uso da API
 
 ### 1. Registrar um usuário
 
@@ -161,25 +159,7 @@ curl -X POST "http://localhost:8000/api/v1/monitor/check/1" \
 curl -X GET "http://localhost:8000/api/v1/monitor/stats/1" \
   -H "Authorization: Bearer SEU_TOKEN"
 ```
-
-## 🧪 Testes
-
-```bash
-# Executar todos os testes
-pytest
-
-# Com coverage
-pytest --cov=app --cov-report=html
-
-# Testes específicos
-pytest tests/test_auth.py
-pytest tests/test_products.py -v
-
-# Ver relatório de coverage
-open htmlcov/index.html
-```
-
-## 🐳 Docker Commands
+## Docker Commands
 
 ```bash
 # Subir todos os serviços
@@ -202,7 +182,7 @@ docker-compose exec api /bin/bash
 docker-compose ps
 ```
 
-## 📊 Monitoramento
+## Monitoramento
 
 ### Flower (Celery UI)
 - URL: http://localhost:5555
@@ -216,7 +196,7 @@ docker-compose ps
 - URL: http://localhost:8000/redoc
 - Documentação alternativa
 
-## 🔧 Configuração
+## Configuração
 
 Principais variáveis de ambiente (`.env`):
 
@@ -238,7 +218,7 @@ REQUEST_TIMEOUT=30
 MAX_RETRIES=3
 ```
 
-## 🎨 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **FastAPI** - Framework web moderno e rápido
 - **SQLAlchemy** - ORM para banco de dados
@@ -251,7 +231,7 @@ MAX_RETRIES=3
 - **pytest** - Framework de testes
 - **Docker** - Containerização
 
-## 📈 Roadmap
+## Roadmap
 
 - [ ] Suporte a mais sites de e-commerce
 - [ ] Notificações por email quando alertas são acionados
@@ -261,7 +241,7 @@ MAX_RETRIES=3
 - [ ] Sistema de categorias de produtos
 - [ ] Exportação de dados (CSV, Excel)
 
-## 🤝 Contribuindo
+## Contribuindo
 
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -269,23 +249,13 @@ MAX_RETRIES=3
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📝 Licença
+## Licença
 
 Este projeto está sob a licença MIT.
 
-## 👤 Autor
-
-Desenvolvido como projeto de portfólio demonstrando:
-- Clean Architecture
-- Design Patterns (Repository, Service Layer)
-- Testes automatizados
-- CI/CD ready
-- Documentação completa
-- Boas práticas de código
-
 ---
 
-**💡 Dica:** Para ambientes de produção, configure:
+**Dica:** Para ambientes de produção, configure:
 - Variáveis de ambiente seguras
 - SSL/TLS
 - Rate limiting
